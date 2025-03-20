@@ -1,5 +1,12 @@
 # MetroSoria app
 
+
+Metro Soria es un Proyecto de Final de Ciclo del grado superior DAM(Desarrollo de Aplicaciones Multiplataforma) desarrollado por Manel Lagunas. 
+
+Una aplicación móvil para Android y iOS desarrollada en Flet, un framework derivado de Flutter para Python.
+
+
+----
 ## Run the app
 
 ### uv
