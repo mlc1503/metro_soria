@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Python Debugger: Main.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/src/main.py",
+            "console": "integratedTerminal"
+        },
+        // {
+        //     "name": "Run Flet App",
+        //     "type": "flet",
+        //     "request": "launch",
+        //     "program": "src/main.py",
+        //     "args": ["run", "--android"],
+        //     "console": "integratedTerminal",
+        //     "justMyCode": true
+        // },
+    ]
+}
