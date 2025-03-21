@@ -1,52 +1,21 @@
 import flet as ft
 from styles import *
 import views.mainView as mainView
-import views.holaView as holaView
+import views.buscarView as buscarView
 
 
 def main(page: ft.Page):
     page.title = "Metro Soria"
+    page.vertical_alignment = 'center'
+    page.horizontal_alignment = 'center'
 
-    # print("Initial route: ", page.route)
+    print("Initial route: ", page.route)
 
-    appbarMS = ft.AppBar(title=ft.Text("Metro Soria"))
-
-    # def route_change(e):
-    #     print("Change route to: ", e.route)
-    #     page.views.clear()
-    #     page.views.append(
-    #         ft.View(
-    #             "/",
-    #             [
-    #                 appbarMS,
-    #                 mainView.drawUI()
-    #             ],
-    #         )
-    #     )
-    #     if page.route == "/hola":
-    #         page.views.append(
-    #             ft.View(
-    #                 "/hola",
-    #                 [
-    #                     appbarMS,
-    #                     holaView.draw()
-    #                 ]
-    #             )
-    #         )
-    #     page.update()
-
-    #     def view_pop(e):
-    #         print("View pop:", e.view)
-    #         page.views.pop()
-    #         top_view = page.views[-1]
-    #         page.go(top_view.route)
-
-    #     page.on_route_change = route_change
-    #     page.on_view_pop = view_pop
-
-
-    # page.go(page.route)
-    # page.update()
+    appbarMS = ft.AppBar(
+        title=ft.Text("Metro Soria"),
+        bgcolor=PRIMARY_BLUE,
+        
+        )
 
     def route_change(route):
         page.views.clear()
@@ -54,28 +23,18 @@ def main(page: ft.Page):
             ft.View(
                 "/",
                 [
-                    ft.AppBar(title=ft.Text("Flet app"), bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST),
-                    ft.ElevatedButton("Visit Store", on_click=lambda _: page.go("/hola")),
+                    appbarMS,
+                    mainView.draw(page) #por cada vista que hay, debemos pasarle el objeto Page del main para que haga el routing
                 ],
             )
         )
-        if page.route == "/store":
+        if page.route == "/buscar":
             page.views.append(
                 ft.View(
-                    "/store",
-                    [
-                        ft.AppBar(title=ft.Text("Store"), bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST),
-                        ft.ElevatedButton("Go Home", on_click=lambda _: page.go("/")),
-                    ],
-                )
-            )
-        if page.route == "/hola":
-            page.views.append(
-                ft.View(
-                    "/hola",
+                    "/buscar",
                     [
                         appbarMS,
-                        holaView.draw()
+                        buscarView.draw(page)
                     ],
                 )
             )
