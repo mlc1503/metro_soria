@@ -5,28 +5,23 @@ from styles import *
 # https://github.com/flet-dev/flet/discussions/861
 def draw(page: Page):
     view = SafeArea(
-        # Container(
-            # bgcolor=ALERT_RED,
-            # alignment=alignment.top_center,
-            # content=
-                Column(
-                    alignment= MainAxisAlignment.CENTER,
-                    controls=[
-                        TextField(
-                            label=Text("Origen", color= PRIMARY_BLUE),
-                            border_color=PRIMARY_BLUE,
-                        ),
-                        TextField(
-                            label=Text("Destino", color= PRIMARY_BLUE),
-                            border_color=PRIMARY_BLUE,
-                        ),
-                        Button(
-                            "Buscar", 
-                            on_click= lambda _: page.go("/buscar"),
-                            
-                        )
-                    ]
+        Column(
+            horizontal_alignment= CrossAxisAlignment.CENTER,
+            controls=[
+                TextField(
+                    label=Text("Origen"),
+                    border_color=PRIMARY_BLUE,
+                ),
+                TextField(
+                    label=Text("Destino"),
+                    border_color=PRIMARY_BLUE,
+                ),
+                ElevatedButton(
+                    "Buscar", 
+                    on_click= lambda _: page.go("/buscar"),
+                    # style=ButtonStyle(shape=RoundedRectangleBorder(10))
                 )
-        # )
+            ]
+        )
     )
     return view
